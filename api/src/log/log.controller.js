@@ -8,7 +8,7 @@ class LogController {
             const logs = await logService.getAll();
             res.status(200).json({ logs });
         } catch (err) {
-            res.status(400).json({ message: err.message });
+            res.status(500).json({ message: err.message });
         }
     }
 
@@ -21,7 +21,7 @@ class LogController {
             const log = await logService.get(uuid);
             res.status(200).json({ log });
         } catch (err) {
-            res.status(400).json({ message: err.message });
+            res.status(500).json({ message: err.message });
         }
     }
 
@@ -35,7 +35,7 @@ class LogController {
             );
             res.status(201).json({ message: "Log has been added", log });
         } catch (err) {
-            res.status(400).json({ message: err.message });
+            res.status(500).json({ message: err.message });
         }
     }
 
@@ -56,7 +56,7 @@ class LogController {
                 res.status(200).json({ message: "Log does not exist" });
             }
         } catch (err) {
-            res.status(400).json({ message: err.message });
+            res.status(500).json({ message: err.message });
         }
     }
 
@@ -74,7 +74,7 @@ class LogController {
                 res.status(404).json({ message: "Log does not exist" });
             }
         } catch (err) {
-            res.status(400).json({ message: err.message });
+            res.status(500).json({ message: err.message });
         }
     }
 }

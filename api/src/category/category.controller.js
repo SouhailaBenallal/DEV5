@@ -8,7 +8,7 @@ class CategoryController {
             const categories = await categoryService.getAll();
             res.status(200).json({ categories });
         } catch (err) {
-            res.status(400).json({ message: err.message });
+            res.status(500).json({ message: err.message });
         }
     }
 
@@ -25,7 +25,7 @@ class CategoryController {
                 res.status(404).json({ message: "Category does not exist" });
             }
         } catch (err) {
-            res.status(400).json({ message: err.message });
+            res.status(500).json({ message: err.message });
         }
     }
 
@@ -36,7 +36,7 @@ class CategoryController {
             const category = await categoryService.save(req.body.name);
             res.status(201).json({ message: "Category has been added", category });
         } catch (err) {
-            res.status(400).json({ message: err.message });
+            res.status(500).json({ message: err.message });
         }
     }
 
@@ -54,7 +54,7 @@ class CategoryController {
                 res.status(200).json({ message: "Category does not exist" });
             }
         } catch (err) {
-            res.status(400).json({ message: err.message });
+            res.status(500).json({ message: err.message });
         }
     }
 
@@ -72,7 +72,7 @@ class CategoryController {
                 res.status(404).json({ message: "Category does not exist" });
             }
         } catch (err) {
-            res.status(400).json({ message: err.message });
+            res.status(500).json({ message: err.message });
         }
     }
 }
