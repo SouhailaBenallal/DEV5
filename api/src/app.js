@@ -18,5 +18,12 @@ app.use(cors(corsOptions));
 
 app.use('/api', router);
 
+app.use((req, res) => {
+    res.status(404).send({
+        status: 404,
+        error: "Not found"
+    })
+});
+
 
 module.exports = app;
