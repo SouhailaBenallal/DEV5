@@ -6,7 +6,7 @@ COPY ./ ./
 
 RUN npm install
 RUN npm run build
-RUN npm run migrate:latest
+RUN npx knex migrate:latest --knexfile dist/db/knexfile.js 
 RUN npm run test
 
 CMD ["npm", "start"]
