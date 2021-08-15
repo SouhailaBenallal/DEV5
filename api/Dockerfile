@@ -5,7 +5,7 @@ WORKDIR /app
 COPY ./ ./
 
 RUN npm install
-RUN npm run build
-# RUN npm run test
+# RUN npm run build
+# RUN npm run 
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
